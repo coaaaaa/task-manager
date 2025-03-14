@@ -1,11 +1,13 @@
 # 🚀 Task Manager - A Simple and Intuitive Task Management App
 
-![Task Manager Screenshot](https://imgur.com/a/JJ8g6Cc) <!-- Replace with actual screenshot -->
+![Task Manager Screenshot](https://i.imgur.com/HFSNxs1.png)
 
 ## 📌 Overview
+
 Task Manager is a **lightweight, drag-and-drop** task management application built using **React and Vite**. It allows users to **add, remove, edit, and organize tasks** with ease. The app includes **dark mode support**, **filtering options**, and **drag-and-drop functionality** for reordering tasks.
 
 ## 🌟 Features
+
 - ✅ **Add, edit, and delete tasks**
 - ✅ **Drag & Drop task reordering** (powered by `@hello-pangea/dnd`)
 - ✅ **Dark Mode toggle** with persistent theme storage
@@ -14,23 +16,28 @@ Task Manager is a **lightweight, drag-and-drop** task management application bui
 - ✅ **Smooth animations with `framer-motion`**
 
 ## 📸 Screenshots
-![Task Manager Screenshot](https://imgur.com/a/JJ8g6Cc)
+
+![Task Manager Screenshot](https://i.imgur.com/HFSNxs1.png)
 
 ## 🚀 Live Demo
-🔗 **[Try the Task Manager live!](https://your-live-demo-link.com)**  
+
+🔗 **[Try the Task Manager live!](https://task-manager-nine-bice.vercel.app/)**
 
 ## 🛠 Installation & Usage
+
 Follow these steps to set up the project on your local machine:
 
 ### 🔧 **Prerequisites**
+
 Make sure you have **Node.js** and **npm** installed. You can check by running:
+
 ```sh
 node -v
 npm -v
 
 
 📥 Clone the Repository
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/coaaaaa/task-manager
 cd task-manager
 
 📦 Install Dependencies
@@ -61,3 +68,4 @@ Contributions are welcome! If you'd like to improve the project, feel free to fo
 📜 License
 
 This project is open-source and available under the MIT License.
+```
