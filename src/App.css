@@ -1,0 +1,301 @@
+:root {
+  /* Light mode colors */
+  --text-light: #0a1609;
+  --background-light: #f5faf5;
+  --primary-light: #5bb856;
+  --secondary-light: #97cdd3;
+  --accent-light: #75a6c7;
+
+  /* Dark mode colors */
+  --text-dark: #eaf6e9;
+  --background-dark: #050a05;
+  --primary-dark: #4ca947;
+  --secondary-dark: #2c6268;
+  --accent-dark: #38698a;
+
+  /* Task form width */
+  --task-form-width: 95%;
+}
+
+/* Light mode */
+body.light {
+  background: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Dark mode */
+body.dark {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Global page styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Main application container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-light);
+  padding: 20px;
+  border-radius: 15px;
+  width: 98%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  height: 90vh;
+}
+
+/* Dark mode adjustments */
+body.dark .app-container {
+  background: var(--background-dark);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sticky header section */
+.task-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: var(--background-light);
+  padding: 10px 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .task-header {
+  background: var(--background-dark);
+}
+
+/* Scrollable task list */
+.task-list-wrapper {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 65vh;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.task-list-wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-list-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* Task form styling */
+.task-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: var(--task-form-width);
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid var(--accent-light);
+  border-radius: 6px;
+  transition: border 0.3s ease-in-out;
+}
+
+.task-input:focus {
+  border-color: var(--primary-light);
+  outline: none;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--primary-light);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Task list container */
+.task-list {
+  list-style: none;
+  padding: 0;
+  width: var(--task-form-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Task item wrapper */
+.task-item-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Task items - equal size and structured layout */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-light);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  color: var(--text-light);
+}
+
+body.dark .task-item {
+  background: var(--secondary-dark);
+  color: var(--text-dark);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.task-item.completed {
+  background: var(--primary-light);
+  color: white;
+  transition: background 0.3s ease-in-out;
+}
+
+body.dark .task-item.completed {
+  background: var(--primary-dark);
+  color: white;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.task-item.completed .task-buttons button {
+  color: white;
+}
+
+.task-item.completed .task-drag-handle {
+  color: white;
+}
+
+.task-drag-handle {
+  cursor: grab;
+  font-size: 20px;
+  color: var(--text-light);
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+body.dark .task-drag-handle {
+  color: var(--text-dark);
+}
+
+.task-drag-handle:active {
+  cursor: grabbing;
+}
+
+.task-text {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.task-buttons button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-buttons .complete-btn {
+  color: #28a745;
+}
+
+.task-buttons .edit-btn {
+  color: #f39c12;
+}
+
+.task-buttons .delete-btn {
+  color: #e74c3c;
+}
+
+.task-buttons button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .task-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .task-list-wrapper {
+    max-height: 60vh;
+  }
+
+  .task-buttons {
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 95%;
+    height: 90vh;
+    padding: 10px;
+  }
+
+  .task-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .task-list-wrapper {
+    max-height: 55vh;
+  }
+}

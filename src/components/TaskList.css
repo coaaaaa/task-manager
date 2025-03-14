@@ -1,0 +1,46 @@
+.task-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.task-item-wrapper {
+  min-height: 55px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.task-item.dragging {
+  opacity: 0.6;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-item {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .task-text {
+    max-width: 100%;
+  }
+
+  .task-buttons {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-item {
+    padding: 8px;
+  }
+
+  .task-text {
+    font-size: 0.9rem;
+  }
+
+  .task-buttons button {
+    font-size: 1rem;
+  }
+}
